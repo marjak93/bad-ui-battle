@@ -1,6 +1,5 @@
 "use client";
 
-import { Rating as SimpleRating } from "react-simple-star-rating";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Star } from "./Star";
