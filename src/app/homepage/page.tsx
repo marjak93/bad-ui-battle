@@ -5,7 +5,9 @@ export default function HomePage() {
   return (
     <main className="flex flex-col gap-6 max-w-screen-sm mx-auto py-20">
       <DragDropForm />
-      <Rating />
+      <div className="flex justify-center">
+        <Rating />
+      </div>
     </main>
   );
 }

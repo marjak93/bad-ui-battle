@@ -7,8 +7,8 @@ export const Star = ({ isFilled }: StarProps) => {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="40"
-        height="40"
+        width="1em"
+        height="1em"
         viewBox="0 0 24 24"
         fill="currentColor"
       >
@@ -20,8 +20,8 @@ export const Star = ({ isFilled }: StarProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="40"
-      height="40"
+      width="1em"
+      height="1em"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"

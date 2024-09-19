@@ -33,7 +33,7 @@ const Input = ({ n, isFilled, onChange }: InputProps) => {
 
 const Stars = ({ amount, rating, onChange }: StarsProps) => {
   return (
-    <div>
+    <div className="text-yellow-500">
       {[...Array(amount)].map((_, i) => (
         <label key={i} htmlFor={`rating-${i + 1}`}>
           <Input n={i + 1} isFilled={i < rating} onChange={onChange} />
@@ -60,9 +60,15 @@ export const Rating = () => {
     }, 500);
   };
   return (
-    <motion.div animate={{ x: -40 * diff }}>
-      <Stars amount={5} rating={rating} onChange={handleChange} />
-      {rating > 0 && <p>Thank you for 5 stars!</p>}
-    </motion.div>
+    <div className="flex flex-col justify-center text-center text-[80px]">
+      <motion.div
+        animate={{ x: `-${diff}em`, rotate: diff * 20, y: diff * -40 }}
+      >
+        <Stars amount={5} rating={rating} onChange={handleChange} />
+      </motion.div>
+      <div className="text-lg">
+        {rating > 0 && <p>Thank you for 5 stars!</p>}
+      </div>
+    </div>
   );
 };
