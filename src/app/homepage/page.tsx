@@ -1,5 +1,6 @@
 import { DragDropForm } from "@/components/DragDropForm";
 import { Rating } from "@/components/Rating";
+import { SubmitButton } from "@/components/SubmitButton";
 
 export default function HomePage() {
   return (
@@ -7,6 +8,9 @@ export default function HomePage() {
       <DragDropForm />
       <div className="flex justify-center">
         <Rating />
+      </div>
+      <div className="text-left">
+        <SubmitButton />
       </div>
     </main>
   );
