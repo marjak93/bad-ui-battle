@@ -87,9 +87,11 @@ export const Rating = () => {
       >
         <Stars amount={5} rating={rating} onChange={handleChange} />
       </motion.div>
-      <div className="text-lg">
+      {/* @ts-ignore */}
+      <marquee className="text-lg">
         {rating > 0 && <p>Thank you for 5 stars! 🎉🎉</p>}
-      </div>
+        {/* @ts-ignore */}
+      </marquee>
     </div>
   );
 };
