@@ -16,6 +16,8 @@ interface StarsProps {
   onChange: (n: number) => void;
 }
 
+const DURATION = 1000;
+
 const Input = ({ n, isFilled, onChange }: InputProps) => {
   return (
     <>
@@ -48,16 +50,20 @@ export const Rating = () => {
   const [rating, setRating] = useState(0);
 
   const handleChange = (value: number) => {
-    setDiff(5 - value);
+    if (value === 5) {
+      setRating(5);
+      return;
+    }
 
+    setDiff(5 - value);
     setTimeout(() => {
       setRating(5);
-    }, 200);
+    }, DURATION);
 
     setTimeout(() => {
       setDiff(0);
       setRating(5);
-    }, 500);
+    }, DURATION * 1.1);
   };
   return (
     <div className="flex flex-col justify-center text-center text-[80px]">
@@ -67,6 +73,7 @@ export const Rating = () => {
           y: diff * 5,
           rotate: diff * 10,
           transformOrigin: "right",
+          transition: { duration: DURATION / 1000 },
         }}
       >
         <Stars amount={5} rating={rating} onChange={handleChange} />
