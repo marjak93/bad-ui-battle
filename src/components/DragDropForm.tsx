@@ -7,7 +7,7 @@ const alphabetArray = [...Array(26)].map((_, i) => String.fromCharCode(i + 65));
 
 export const DragDropForm = () => {
   const [currentText, setCurrentText] = useState("");
-  const [insideForm, setInsideForm] = useState(false);
+  const [, setInsideForm] = useState(false);
 
   const handleDragEnd = (draggedChar: string) => {
     if (draggedChar === "space") {
