@@ -17,7 +17,7 @@ export const DragDropForm = () => {
 
       <form className="min-h-[420px] flex flex-col gap-4">
         <p>How was your delivery?</p>
-        <textarea className="grow h-full rounded-xl pointer-events-none" />
+        <textarea className="grow h-full rounded-xl pointer-events-none border-3 border" />
       </form>
     </div>
   );
