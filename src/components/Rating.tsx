@@ -62,7 +62,12 @@ export const Rating = () => {
   return (
     <div className="flex flex-col justify-center text-center text-[80px]">
       <motion.div
-        animate={{ x: `-${diff}em`, rotate: diff * 20, y: diff * -40 }}
+        animate={{
+          x: `-${diff}em`,
+          y: diff * 5,
+          rotate: diff * 10,
+          transformOrigin: "right",
+        }}
       >
         <Stars amount={5} rating={rating} onChange={handleChange} />
       </motion.div>
