@@ -16,7 +16,7 @@ interface StarsProps {
   onChange: (n: number) => void;
 }
 
-const DURATION = 1000;
+const DURATION = 750;
 
 const Input = ({ n, isFilled, onChange }: InputProps) => {
   return (
@@ -28,7 +28,15 @@ const Input = ({ n, isFilled, onChange }: InputProps) => {
         className="sr-only"
         onChange={() => onChange(n)}
       />
-      <Star isFilled={isFilled} />
+      <motion.div
+        className="inline-block"
+        animate={{
+          scale: isFilled ? [1, 1.25, 1] : 1,
+          transition: { duration: 0.2 },
+        }}
+      >
+        <Star isFilled={isFilled} />
+      </motion.div>
     </>
   );
 };
@@ -65,6 +73,7 @@ export const Rating = () => {
       setRating(5);
     }, DURATION * 1.1);
   };
+
   return (
     <div className="flex flex-col justify-center text-center text-[80px]">
       <motion.div
@@ -79,7 +88,7 @@ export const Rating = () => {
         <Stars amount={5} rating={rating} onChange={handleChange} />
       </motion.div>
       <div className="text-lg">
-        {rating > 0 && <p>Thank you for 5 stars!</p>}
+        {rating > 0 && <p>Thank you for 5 stars! 🎉🎉</p>}
       </div>
     </div>
   );
